@@ -5,7 +5,7 @@
 Install the dependencies:
 
 ```bash
-pnpm install
+npm install
 ```
 
 ## Get started
@@ -13,20 +13,25 @@ pnpm install
 Start the dev server, and the app will be available at [http://localhost:3000](http://localhost:3000).
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 Build the app for production:
 
 ```bash
-pnpm build
+npm build
 ```
 
 Preview the production build locally:
 
 ```bash
-pnpm preview
+npm preview
 ```
+
+## Recreate the bug
+
+- On `@rsbuild/core` version 1.5.4 or later, run `npm run build` then open `dist/static/js/index.<hash>.js` and look for `new (null)("en-US")`. This is a bug.
+- On `@rsbuild/core` version 1.5.3 or earlier, run `npm run build` then open `dist/static/js/index.<hash>.js` and the bad code won't be there.
 
 ## Learn more
 
